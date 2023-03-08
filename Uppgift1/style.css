@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: black;
+    color: #fff;
+}
+
+header{
+    position: sticky;
+    background-color: #101010; 
+
+    top: 0;
+    height:  80px;
+    width: 100%;       
+}
+
+/*Är onödig för mindre skärmen men centrerar innehållet när skärmen vidgas*/
+.inner_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+    height: 100%;
+    margin: auto;  
+}
+
+/*loggan*/
+.logo{
+    font-family: Georgia, 'Times New Roman', Times, serif;       
+    font-style: italic;
+    font-weight: 1000;
+    margin: 5px;
+}
+
+.logo > span{
+    font: bold;
+    font-weight: 100;
+    margin-left: 3px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+nav a{
+    position: relative;   
+    transition-duration: 0.4s;
+    cursor: pointer; 
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;       
+}
+
+nav a:hover{
+    background-color: rgba(160, 160, 160, 0.534);
+}
+
+section{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;   
+}
+
+section img{
+    
+    right: 0px;
+    height: calc(100vh - 80px);
+}
+
+#title{
+
+    color: rgba(255, 255, 255, 0.651);
+    margin: auto;
+
+    font-size: 25px;
+}
+
+@media screen and (min-width: 600px) {
+    #title{
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .inner_header{
+        width: 60%;
+        flex-direction: row;
+    }
+
+    #title{
+        font-size: 75px;
+    }
+    
+}
+
+@media screen and (min-width: 1200px) {
+
+    .inner_header{
+        width: 60%;
+        flex-direction: row;
+    }
+
+    nav a{
+        font-size: 20px;
+    }
+
+}
