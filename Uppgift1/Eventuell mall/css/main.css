@@ -1,0 +1,273 @@
+/*Tar bort alla förinställda margin och paddings för att göra egen styling från scratch*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Stylar med mobile first principen, alltså för mindre skärm först*/
+body{
+    background-color: rgb(21, 20, 39);
+}
+
+/*Ville göra en hero header denna gång, föredrar stilen av sådana*/
+header{
+    position: sticky;
+    background-color: #101010; 
+
+    top: 0;
+    height:  80px;
+    width: 100%;
+    z-index: 1;
+    /*Z index för att banner titeln med position absolute inte ska täcka över headern*/              
+}
+
+/*Är onödig för mindre skärmen men centrerar innehållet när skärmen vidgas*/
+.inner_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+    height: 100%;
+    margin: auto;  
+}
+
+/*loggan*/
+.logo{       
+    font-style: italic;
+    font-weight: 1000;
+
+    color: white;
+    margin: 5px;
+}
+
+.logo > span{
+    font: bold;
+    font-weight: 100;
+    margin-left: 3px;
+}
+
+nav a{
+    position: relative;   
+    transition-duration: 0.4s;
+    cursor: pointer; 
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;       
+}
+
+nav a:hover{
+    background-color: rgba(160, 160, 160, 0.534);
+}
+
+/*bannerns container*/
+section{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;   
+}
+
+section img{
+    width: 100%;
+    height: 50vh;
+}
+
+#title{
+    position: absolute;
+    color: rgba(255, 255, 255, 0.651);
+    margin: auto;
+
+    /*ville testa olika värden för font size, därför jag använder px ibland och ibland vw*/
+    font-size: 9vw;
+}
+
+.wrapper{     
+    height: 100%;      
+    margin: auto;
+    background-color: whitesmoke;
+}
+
+/*Behandlar all text på sidan*/
+.text{    
+    color: black;
+
+    width: 70%;
+    padding: 5%;
+    margin: auto;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2em;
+}
+
+.text p{
+    margin-bottom: 20px;
+}
+
+/*ville ha annorlunda stil på första rubriken bara*/
+#rubrik1{
+    font-size: 40px;
+}
+
+.rubrik{
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+/*här kommer massa gratis bilder från pixabay*/
+#satelit{
+    width: 200px;
+    height: 150px;
+}
+
+#globe{
+    width: 200px;
+    height: 200px;
+}
+
+#bigpic{
+    width: 100%;
+}
+
+#uggla{
+    width: 200px;
+    height: 200px;
+}
+
+#astronaut{
+    width: 200px;
+    height: 250px;
+}
+
+#källa{
+    font-style: italic;
+    color: #464646;
+    margin: 0;
+}
+
+.links{
+    font-style: italic;
+    color: #464646;
+    display: block;
+    padding: 5px 0;
+
+    font-size: 12px;
+}
+
+.site_footer{   
+    background-color: #101010;
+
+    width: 100%;
+    border-top: 1px solid white;
+    color: white;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.site_footer div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.site_footer h3{
+    margin-bottom: 0;
+}
+
+.adress{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.adress li{
+    padding: 0 10px;
+}
+
+.socials{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+}
+
+.fa{
+    padding: 10px;
+    color: rgb(0, 0, 0);
+}
+
+/*Nu stil för de bredare skärmarna, får sidan att kännas responsiv och smidig.*/
+@media screen and (min-width: 600px) {
+
+    section img{
+        height: 100vh;
+    }
+
+    .wrapper{
+        width: 60%;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        border-radius: 10px;
+    }
+
+}
+
+@media screen and (min-width: 1000px) {
+
+    .inner_header{
+        width: 60%;
+        flex-direction: row;
+    }
+
+    section img{
+        height: 100vh;
+    }
+
+    .wrapper{
+        width: 60%;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        border-radius: 10px;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    .inner_header{
+        width: 60%;
+        flex-direction: row;
+    }
+
+    nav a{
+        font-size: 20px;
+    }
+
+    section img{
+        height: 100vh;
+    }
+    
+    .wrapper{
+        width: 50%;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        border-radius: 10px;
+
+    }
+
+    #rubrik1{
+        font-size: 50px;
+    }
+
+}
