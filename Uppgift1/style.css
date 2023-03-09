@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Shantell+Sans:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 body{
-    background: black;
+    background: #101010;
     color: #fff;
 }
 
@@ -32,25 +36,25 @@ header{
 
 /*loggan*/
 .logo{
-    font-family: Georgia, 'Times New Roman', Times, serif;       
-    font-style: italic;
-    font-weight: 1000;
+    font-family: 'Shantell Sans', cursive;
+    color: #fff;
+    
+    font-size: xx-large;
+    cursor: pointer;
     margin: 5px;
 }
 
 .logo > span{
+    font-family: 'Rubik Iso', cursive;
     font: bold;
     font-weight: 100;
     margin-left: 3px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-nav a{
-    position: relative;   
+nav a{   
     transition-duration: 0.4s;
     cursor: pointer; 
     color: white;
-    text-decoration: none;
     margin: 10px;
     padding: 5px;
     border-radius: 10px;       
@@ -60,26 +64,37 @@ nav a:hover{
     background-color: rgba(160, 160, 160, 0.534);
 }
 
-section{   
+main{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+section{
+    padding: 20px;   
     display: flex;
     justify-content: center;
     align-items: center;
-
-    width: 100%;
-    height: 100%;   
+    flex: 1 0 auto;
 }
 
-section img{
-    
+#content {
+    color: rgba(255, 255, 255, 0.705);
+    width: 175px;
+}
+
+#content hr{
+    margin-bottom: 50px;
+    border-color: rgba(255, 255, 255, 0.651);
+}
+
+main img{
     right: 0px;
     height: calc(100vh - 80px);
 }
 
 #title{
-
-    color: rgba(255, 255, 255, 0.651);
-    margin: auto;
-
+    text-align: center;
     font-size: 25px;
 }
 
@@ -97,6 +112,10 @@ footer {
     #title{
         font-size: 50px;
     }
+
+    #content {
+        width: 300px;
+    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -108,6 +127,10 @@ footer {
 
     #title{
         font-size: 75px;
+    }
+
+    #content {
+        width: 500px;
     }
     
 }
