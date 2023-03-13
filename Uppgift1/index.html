@@ -7,12 +7,13 @@
     <title>JidakerPortfolio</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
         <!--Innre header för att kunna centrera innehållet-->
         <div class="inner_header">      
-            <a href="#" class="logo">Oscar<span>Jidåker</span></a>
+            <a href="#" class="logo">Oscar<span id="logo-secondpart">Jidåker</span></a>
             <nav class="navigation">
                 <a href="#">Home</a>
                 <a href="#">Portfolio</a>
@@ -24,17 +25,26 @@
      <main>
         <section>
             <div id="content">
-                <hr>
-                <h1 id="title">About me</h1>
-                <p>Här ska jag skriva massa random grejer eller något jag venne riktigt</p>
-                
+                <p>backend/java developer</p>
+                <h1 id="title">Hej, jag är<br> Oscar <span>Jidåker</span></h1>
             </div>     
         </section>
         <img src="images/banner5.png" id="banner" alt="Bild på mig">      
     </main>
     
-    <footer>
-        <p>Copyright&copy; <script>document.write(new Date().getFullYear());</script> – Oscar – oscar_jidaker@icloud.com</p>
-    </footer>
+    <footer class="site-footer">
+        <div>
+           <h3>Socials</h3>
+           <ul class="adress">
+               <li><p>Copyright&copy; <script>document.write(new Date().getFullYear());</script> – Oscar Jidåker</p></li>
+               <li><p>oscar_jidaker@icloud.com</p></li>
+           </ul>
+           <ul class="socials">
+               <li><a href="https://www.facebook.com/oscar.jidaker/" class="fa fa-facebook"></a></li>
+               <li><a href="https://www.youtube.com/channel/UCKyeg8c8UoC6atMC5gSTdSg" class="fa fa-youtube"></a></li>
+               <li><a href="https://www.instagram.com/ocke_champion/" class="fa fa-instagram"></a></li>
+           </ul>
+       </div>
+   </footer>
 </body>
 </html>
