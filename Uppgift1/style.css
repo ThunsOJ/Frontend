@@ -22,7 +22,8 @@ header{
 
     top: 0;
     height:  80px;
-    width: 100%;       
+    width: 100%;
+    z-index: 1;       
 }
 
 /*Är onödig för mindre skärmen men centrerar innehållet när skärmen vidgas*/
@@ -70,10 +71,10 @@ nav a:hover{
     background-color: rgba(160, 160, 160, 0.534);
 }
 
-main{
+#banner{
     display: flex;
     width: 100%;
-    height: 100%;
+    min-height: calc(100vh - 80px);
 }
 
 section{
@@ -86,72 +87,142 @@ section{
 
 #content {
     color: rgba(255, 255, 255, 0.705);
-    width: 175px;
+    
 }
 
-#content hr{
-    margin-bottom: 50px;
-    border-color: rgba(255, 255, 255, 0.651);
-}
-
-main img{
+#banner img{
     right: 0px;
     height: calc(75vh - 80px);
     margin-top: 15vh;
 }
 
 #title{
-    font-size: 25px;
+    font-size: 20px;
 }
 
-.section_footer{
-    border-top: 1px solid  rgb(185, 185, 185);
+#banner p{
+    font-size: 0.7rem;
+}
+
+main{
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    height: 100%;
+    position: relative;
+}
+
+.description{
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 25vh;
+    border-bottom: solid white 1px;
     display: flex;
-    padding-top: 10px;
+    flex-direction: column;
 }
 
-/*Sidebar med bildshow. Just nu är de relativa sökvägar i en mapp, borde förmodligen ändras*/
-.sidebar{
-    background-image: url(assets/slide1.jpg);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-
-    width: 100%;
-    height: 400px;
-    animation: change 40s infinite ease-in-out;
+.description h2{
+    margin: 10px 0 10px 0;
+    font-size: 3rem;
+    letter-spacing: 0.06em
 }
 
-.sidebar h3{
-    text-align: center;
-    color: white;
+.description p{
+    letter-spacing: 0.04em
 }
 
-.sidebar button{
-    border-radius: 5px;
-    background-color: #70a9ff;
-    display: block;
-    margin: 0 auto;
+article {
+    position: relative;
+    border-radius: 16px;
+    box-shadow: none;
+    background: #fff;
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    color: #101010;
+    height: 100%;
 }
 
-.sidebar p{
-    color: white;
-    text-align: center;
+article h2 {
+    font-family: 'Shantell Sans', cursive;
+    margin: 0 0 10px 0;
+    font-size: 1.9rem;
+    letter-spacing: 0.06em;
+    color: var(--title-color);
+    transition: color 0.3s ease-out;
+  }
+
+article p{
+    letter-spacing: 0.04em
+}
+  
+figure {
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+  
+article img {
+    max-width: 100%;
+    transform-origin: center;
+    transform: scale(var(--img-scale));
+    transition: transform 0.4s ease-in-out;
+}
+  
+.article-body {
+    padding: 24px;
 }
 
-/*
-footer {
-    text-align: center;
-    background-color: #101010;
-    color: #fff;
-    padding: 20px;
+article .fa{
     position: absolute;
-    top: calc(100vh + 20px);
-    width: 100%;
+    right: 0;
+    bottom: 0;
+    
+    padding: 10px;
+    color: black;
 }
-*/
 
-.site-footer{   
-    background-color: #ff004f;
+  /*tog från nätet för zoom möjligheter*/
+article:has(:hover, :focus) {
+    --img-scale: 1.1;
+    --title-color: #28666e;
+    --link-icon-translate: 0;
+    --link-icon-opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+  
+.articles {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    display: grid;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.map{
+    position: absolute;
+    width: 100%;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+iframe {
+    height: 225px;
+    width: 300px;
+    resize: both;
+    overflow: auto;
+}
+
+
+.site-footer{  
+    text-decoration: none; 
+    background-color: #101010;
 
     width: 100%;
     border-top: 1px solid white;
@@ -170,30 +241,22 @@ footer {
     align-items: center;
 }
 
-.site-footer h3{
-    margin-bottom: 0;
-}
-
 .adress{
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .adress li{
-    padding: 0 10px;
+    padding: 5px 10px;
 }
 
 .socials{
     display: flex;
     justify-content: space-evenly;
-    padding: 0;
-    margin: 0;
 }
 
-.fa{
+footer .fa{
     padding: 10px;
     color: white;
 }
@@ -205,6 +268,7 @@ footer {
 }
 
 hr{
+    margin: 10px 10px;
     width: 100%;
 }
 
@@ -213,13 +277,20 @@ hr{
         font-size: 40px;
     }
 
-    #content {
-        width: 300px;
-    }
-
-    main img{
+    #banner img{
         margin: 0;
         height: calc(100vh - 80px);
+    }
+
+    #banner p{
+        font-size: 1rem;
+    }
+
+    iframe {
+        height: 450px;
+        width: 600px;
+        resize: both;
+        overflow: auto;
     }
 }
 
@@ -233,12 +304,7 @@ hr{
     #title{
         font-size: 75px;
     }
-
-    #content {
-        width: 500px;
-    }
-
-    
+   
 }
 
 @media screen and (min-width: 1200px) {
@@ -252,4 +318,5 @@ hr{
         font-size: 20px;
     }
 
-}
+}    
+  
